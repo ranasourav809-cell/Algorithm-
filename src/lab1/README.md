@@ -180,5 +180,5 @@ It is great for learning:
 
 Although the solution is elegant, it becomes slow for large values of `n` because the time complexity is exponential.
 
-Overall, this is a perfect beginner example to understand **recursion in C++**.
+Overall, this is a perfect beginner example to understand **recursion in C++**
 
