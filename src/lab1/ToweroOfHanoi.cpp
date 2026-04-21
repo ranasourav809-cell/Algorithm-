@@ -1,20 +1,32 @@
-import java.util.Scanner;
+#include <iostream>
+#include <chrono>
+using namespace std;
+using namespace std::chrono;
 
-public class TowerOfHanoi {
-    public static void TOH(int n, int src, int dest, int ex){
-        if (n <= 0) return;
-        if (n == 1) {
-            System.out.printf("Move disk from %d to %d\n", src, dest);
-            return;
-        }
-        TOH(n-1,src,ex,dest);
-        System.out.printf("Move disk from %d to %d\n",src,dest);
-        TOH(n-1,ex,dest,src);
+void towerOfHanoi(int n, char source, char auxiliary, char destination) {
+    if(n == 1) {
+        return;
     }
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter number of Disc = ");
-        int n = sc.nextInt();
-        TOH(n,1,3,2);
+
+    towerOfHanoi(n - 1, source, destination, auxiliary);
+    towerOfHanoi(n - 1, auxiliary, source, destination);
+}
+
+int main() {
+    cout << "InputSize\tTime(us)\n";
+
+    for(int n = 1; n <= 15; n++) {
+
+        auto start = high_resolution_clock::now();
+
+        towerOfHanoi(n, 'A', 'B', 'C');
+
+        auto stop = high_resolution_clock::now();
+
+        auto duration = duration_cast<microseconds>(stop - start);
+
+        cout << n << "\t\t" << duration.count() << endl;
     }
+
+    return 0;
 }

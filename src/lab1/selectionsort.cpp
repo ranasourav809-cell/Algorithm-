@@ -3,12 +3,18 @@
 using namespace std;
 using namespace std::chrono;
 
-int linearSearch(int arr[], int n, int key) {
-    for(int i = 0; i < n; i++) {
-        if(arr[i] == key)
-            return i;
+void selectionSort(int arr[], int n) {
+    for(int i = 0; i < n-1; i++) {
+        int minIndex = i;
+        for(int j = i+1; j < n; j++) {
+            if(arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+        int temp = arr[i];
+        arr[i] = arr[minIndex];
+        arr[minIndex] = temp;
     }
-    return -1;
 }
 
 int main() {
@@ -19,13 +25,11 @@ int main() {
         int *arr = new int[n];
 
         for(int i = 0; i < n; i++)
-            arr[i] = i + 1;
-
-        int key = n;  
+            arr[i] = n - i;
 
         auto start = high_resolution_clock::now();
 
-        linearSearch(arr, n, key);
+        selectionSort(arr, n);
 
         auto stop = high_resolution_clock::now();
 
@@ -35,6 +39,5 @@ int main() {
 
         delete[] arr;
     }
-
     return 0;
 }

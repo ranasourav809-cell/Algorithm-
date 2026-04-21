@@ -1,30 +1,17 @@
 #include <iostream>
 using namespace std;
 
-double powerRec(double x, int n) {
-    if (n == 0) return 1;
+int power(int x, int n) {
+    if(n == 0) return 1;
 
-    if (n < 0) return powerRec(1 / x, -n);
+    int half = power(x, n/2);
 
-    double half = powerRec(x, n / 2);
-
-    if (n % 2 == 0)
+    if(n % 2 == 0)
         return half * half;
     else
-        return half * half * x;
-}
-
-double powerRec2(double x, int n) {
-    if (n == 0) return 1;
-
-    if (n < 0) return powerRec2(1 / x, -n);
-
-    return x * powerRec2(x, n - 1);
+        return x * half * half;
 }
 
 int main() {
-    cout << powerRec(4, 5) << endl;
-    cout << powerRec2(4, 5) << endl;
-
-    return 0;
+    cout << power(2, 10);
 }
