@@ -1821,3 +1821,371 @@ This program correctly finds the shortest path in a Multistage Graph.
 It demonstrates Dynamic Programming for graph optimization.
 
 This algorithm is useful in routing, decision processes, and staged optimization problems.
+
+# Algorithm - Floyd Warshall Algorithm (C++)
+
+This program implements the Floyd Warshall Algorithm in C++ to find the shortest path between all pairs of vertices in a weighted graph.
+
+It helps in understanding dynamic programming and how shortest paths can be computed efficiently for every pair of vertices.
+
+## Aim
+
+To implement Floyd Warshall Algorithm in C++ to find shortest paths between all pairs of vertices.
+
+## Theory
+
+Floyd Warshall is a Dynamic Programming algorithm used to find shortest paths in a weighted graph.
+
+It works for:
+
+Directed graphs
+
+Undirected graphs
+
+Graphs with positive or negative weights (but no negative cycles)
+
+Working:
+
+Consider each vertex as an intermediate point.
+
+Check if going through this intermediate vertex gives a shorter path.
+
+Update the distance matrix accordingly.
+
+Repeat this process for all vertices.
+
+The algorithm gradually improves the solution until all shortest paths are found.
+
+## Algorithm
+
+For every vertex k:
+
+Check all pairs (i, j)
+
+If distance[i][j] > distance[i][k] + distance[k][j]
+
+Update:
+
+distance[i][j] = distance[i][k] + distance[k][j]
+
+## Time Complexity
+
+O(n³)
+
+Three nested loops are used for all vertices.
+
+## Space Complexity
+
+O(n²)
+
+A matrix is used to store distances.
+
+## What the Code Does
+
+Takes a graph as input in matrix form.
+
+Initializes distance matrix.
+
+Uses three nested loops to update shortest paths.
+
+Checks if going through an intermediate vertex reduces distance.
+
+Prints the final shortest distance matrix.
+
+## Conclusion
+
+Floyd Warshall Algorithm correctly finds shortest paths between all pairs of vertices.
+
+It demonstrates dynamic programming and optimization techniques.
+
+This algorithm is useful in network routing, graph analysis, and shortest path problems.
+
+It is efficient for dense graphs and provides a complete solution for all-pairs shortest paths.
+
+# Algorithm - Travelling Salesman Problem using Backtracking (C++)
+
+This program implements the Travelling Salesman Problem (TSP) using Backtracking in C++ to find the minimum cost required to visit all cities exactly once and return to the starting city.
+
+It helps in understanding recursion, backtracking, and how all possible paths are explored to find the optimal solution.
+
+## Aim
+
+To implement the Travelling Salesman Problem using Backtracking in C++ and find the minimum travelling cost.
+
+## Theory
+
+Travelling Salesman Problem (TSP) is a classic optimization problem.
+
+Given:
+
+A set of cities
+
+Distance between every pair of cities
+
+Objective:
+
+Visit each city exactly once
+
+Return to the starting city
+
+Minimize total travel cost
+
+Backtracking Approach:
+
+Try all possible paths (permutations of cities)
+
+Keep track of visited cities
+
+Calculate cost of each path
+
+Choose the minimum cost among all possible paths
+
+Working:
+
+Start from a fixed city
+
+Mark it as visited
+
+Recursively visit all unvisited cities
+
+Add cost of each move
+
+After visiting all cities, return to start
+
+Track minimum cost
+
+## Time Complexity
+
+O(n!)
+
+All possible permutations of cities are explored.
+
+## Space Complexity
+
+O(n)
+
+Space used for recursion and visited array.
+
+## What the Code Does
+
+Takes cost matrix as input.
+
+Marks visited cities.
+
+Uses recursion to explore all possible paths.
+
+Calculates total cost for each path.
+
+Finds and returns the minimum travelling cost.
+
+## Conclusion
+
+The Backtracking approach correctly solves the Travelling Salesman Problem by checking all possible paths.
+
+It guarantees the optimal solution but is inefficient for large inputs due to factorial time complexity.
+
+This program demonstrates recursive problem solving and exhaustive search techniques in algorithm design.
+
+# Algorithm - Graph Coloring using Backtracking (C++)
+
+This program implements the Graph Coloring problem using Backtracking in C++ to assign colors to vertices such that no two adjacent vertices have the same color.
+
+It helps in understanding constraint satisfaction problems and recursive backtracking techniques.
+
+## Aim
+
+To implement Graph Coloring using Backtracking in C++ with a limited number of colors.
+
+## Theory
+
+Graph Coloring assigns colors to vertices of a graph such that:
+
+No two adjacent vertices share the same color
+
+At most m colors are used
+
+Backtracking Approach:
+
+Try assigning colors one by one
+
+Check if the assignment is valid
+
+If valid, move to next vertex
+
+If not, try another color
+
+Backtrack when no valid color is possible
+
+## Time Complexity
+
+O(m^n)
+
+Where m is number of colors and n is number of vertices
+
+## Space Complexity
+
+O(n)
+
+## What the Code Does
+
+Takes graph as adjacency matrix
+
+Assigns colors using recursion
+
+Checks validity using isSafe function
+
+Prints all valid color combinations
+
+## Conclusion
+
+Graph Coloring using Backtracking solves constraint problems by exploring all valid possibilities.
+
+It is useful in scheduling, register allocation, and map coloring problems.
+
+# Algorithm - Hamiltonian Cycle using Backtracking (C++)
+
+This program implements the Hamiltonian Cycle problem using Backtracking in C++ to find a cycle that visits each vertex exactly once and returns to the starting vertex.
+
+## Aim
+
+To find Hamiltonian cycles in a graph using Backtracking.
+
+## Theory
+
+A Hamiltonian Cycle is a cycle that:
+
+Visits every vertex exactly once
+
+Returns to the starting vertex
+
+Backtracking Approach:
+
+Build path step by step
+
+Check if vertex can be added
+
+Ensure no repetition
+
+Ensure last vertex connects to first
+
+Backtrack if conditions fail
+
+## Time Complexity
+
+O(n!)
+
+## Space Complexity
+
+O(n)
+
+## What the Code Does
+
+Takes graph as adjacency matrix
+
+Builds path using recursion
+
+Checks adjacency and uniqueness
+
+Prints all Hamiltonian cycles
+
+## Conclusion
+
+Hamiltonian Cycle demonstrates backtracking for path finding problems.
+
+It is widely used in routing and graph traversal problems.
+
+# Algorithm - N Queens Problem using Backtracking (C++)
+
+This program implements the N Queens problem using Backtracking in C++ to place N queens on an N×N chessboard such that no two queens attack each other.
+
+## Aim
+
+To place N queens on a chessboard without conflicts.
+
+## Theory
+
+Conditions:
+
+No two queens in same row
+
+No two queens in same column
+
+No two queens in same diagonal
+
+Backtracking Approach:
+
+Place queen row by row
+
+Try all columns
+
+Check safety
+
+Move to next row if safe
+
+Backtrack otherwise
+
+## Time Complexity
+
+O(n!)
+
+## Space Complexity
+
+O(n)
+
+## What the Code Does
+
+Places queens row by row
+
+Checks column and diagonal conflicts
+
+Prints all valid solutions
+
+## Conclusion
+
+N Queens is a classic backtracking problem demonstrating constraint satisfaction and recursion.
+
+# Algorithm - Sum of Subsets using Backtracking (C++)
+
+This program implements the Sum of Subsets problem using Backtracking in C++ to find all subsets whose sum equals a given value.
+
+## Aim
+
+To find subsets whose sum equals a target value using Backtracking.
+
+## Theory
+
+Given a set of numbers and a target sum:
+
+Find all subsets whose sum equals the target
+
+Backtracking Approach:
+
+Include or exclude each element
+
+Track current sum
+
+Use bounding conditions to reduce unnecessary calls
+
+## Time Complexity
+
+O(2^n)
+
+## Space Complexity
+
+O(n)
+
+## What the Code Does
+
+Takes set of numbers and target value
+
+Explores all subset combinations
+
+Prints subsets that match target sum
+
+Uses pruning conditions for efficiency
+
+## Conclusion
+
+Sum of Subsets demonstrates efficient backtracking with pruning techniques.
+
+It is useful in decision making and combinatorial problems.
